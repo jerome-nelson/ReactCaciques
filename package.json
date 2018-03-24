@@ -36,12 +36,9 @@
   "scripts": {
     "start": "webpack",
     "develop": "webpack-dev-server --mode development --open",
-    "precommit": "lint-staged"
+    "precommit": "eslint ./src/ && lint-staged"
   },
   "lint-staged": {
-    "*.{js}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js}": ["prettier --write", "git add"]
   }
 }
