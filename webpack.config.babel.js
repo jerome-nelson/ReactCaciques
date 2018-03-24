@@ -26,6 +26,19 @@ module.exports = {
                         loader: 'babel-loader',
                     }
                 ]
+            },
+            {
+                test: /\.(s*)css$/,
+                use: [
+                    {
+                        loader: "style-loader",
+                        options: {
+                            insertAt: 'top'
+                        }
+                    },
+                    { loader: "css-loader" },
+                    { loader: 'sass-loader' },
+                ]
             }
         ]
     },
