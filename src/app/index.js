@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import AppContainer from './containers/app.container';
 
-class AppContainer extends Component {
-    constructor() {
-        super();
-    }
-    render() {
-        return (
-            <div>This is a test</div>
-        );
-    }
-}
-export default AppContainer;
+ReactDOM.render(
+    <AppContainer />,
+    document.getElementById('root')
+);
