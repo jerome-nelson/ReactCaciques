@@ -37,11 +37,13 @@
     "style-loader": "^0.20.3",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
-    "start": "webpack",
-    "develop": "webpack-dev-server --mode development --open",
+    "start": "webpack --config webpack.prod.js",
+    "develop": "webpack-dev-server --open  --config webpack.dev.js",
     "precommit": "eslint ./src/ && lint-staged",
     "prepush": "npm test",
     "test": "jest"
@@ -50,6 +52,9 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   },
   "lint-staged": {
-    "*.{js}": ["prettier --write", "git add"]
+    "*.{js}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }

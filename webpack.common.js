@@ -1,13 +1,7 @@
-import path from "path";
-import webpack from "webpack";
-import CleanWebpackPlugin from "clean-webpack-plugin";
-import HtmlWebpackPlugin from "html-webpack-plugin";
+const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  devServer: {
-    contentBase: "./dist",
-    hot: true
-  },
   entry: {
     app: [path.resolve(__dirname, "./src/app/index.js")],
     vendors: ["react", "react-dom"]
@@ -46,13 +40,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin(path.resolve(__dirname, "dist")),
-    new HtmlWebpackPlugin({
-      template: "src/templates/index.html",
-      filename: "index.html"
-    }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  plugins: [new CleanWebpackPlugin(path.resolve(__dirname, "dist"))]
 };
