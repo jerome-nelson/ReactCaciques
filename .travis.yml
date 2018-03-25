@@ -10,7 +10,7 @@ deploy:
   secret_access_key:
     secure: "$SECRETACCESSKEY"
   region: "$REGION"  
-  app: "react-test"
+  app: "$APPNAME"
   bucket_name: "$BUCKETNAME"
   on:
     branch: master

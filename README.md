@@ -9,6 +9,10 @@ This is a project using React.
 * Travis CI Builds
 * Master Automated Deployment to AWS Instance
 
+## Travis
+
+`.travis.yml` contains a deploy hook to Elastic Beanstalk instance, (Travis build has private variables for details)
+
 ## Husky
 
 * Precommit: `eslint`, `prettier`
