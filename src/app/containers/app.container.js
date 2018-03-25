@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "../styles/critical.scss";
+
 class AppContainer extends Component {
   constructor() {
     super();
