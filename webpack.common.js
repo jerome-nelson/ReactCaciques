@@ -2,14 +2,6 @@ const path = require("path");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: {
-    app: [path.resolve(__dirname, "./src/app/index.js")],
-    vendors: ["react", "react-dom"]
-  },
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "./bundles/bundle.[name].js"
-  },
   module: {
     rules: [
       {

@@ -9,6 +9,7 @@
     "babel-preset-react": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^0.28.11",
+    "express": "^4.16.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "sass-loader": "^6.0.7"
@@ -32,6 +33,7 @@
     "jest-enzyme": "^6.0.0",
     "lint-staged": "^7.0.0",
     "node-sass": "^4.8.3",
+    "nodemon": "^1.17.2",
     "prettier": "1.11.1",
     "react-test-renderer": "^16.2.0",
     "style-loader": "^0.20.3",
@@ -42,7 +44,7 @@
     "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
-    "start": "webpack --config webpack.prod.js",
+    "start": "webpack --config webpack.prod.js && node ./src/server/",
     "develop": "webpack-dev-server --open  --config webpack.dev.js",
     "precommit": "eslint ./src/ && lint-staged",
     "prepush": "npm test",
@@ -52,9 +54,6 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   },
   "lint-staged": {
-    "*.{js}": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.{js}": ["prettier --write", "git add"]
   }
 }
