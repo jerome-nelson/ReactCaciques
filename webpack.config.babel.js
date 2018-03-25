@@ -5,7 +5,8 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 
 module.exports = {
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./dist",
+    hot: true
   },
   entry: {
     app: [path.resolve(__dirname, "./src/app/index.js")],
@@ -50,6 +51,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "src/templates/index.html",
       filename: "index.html"
-    })
+    }),
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 };
