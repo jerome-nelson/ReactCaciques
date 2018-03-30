@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import { Component } from "react";
 
 class AppContainer extends Component {
   constructor() {
     super();
   }
   render() {
-    return <div>This is a test</div>;
+    return "This is a test";
   }
 }
 export default AppContainer;
