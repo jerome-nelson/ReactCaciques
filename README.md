@@ -1,5 +1,9 @@
 This is a project using React.
 
+## Assets
+
+* Webpack Dev Server: Use /assets to store any static media/files - and refer in project as relative `àssets/[rest-of-url]`
+
 ## Contains
 
 * Webpack Dev Server running Development Build of React
