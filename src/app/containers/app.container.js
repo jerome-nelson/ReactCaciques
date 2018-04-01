@@ -5,7 +5,12 @@ class AppContainer extends Component {
     super();
   }
   render() {
-    return <div>This is a test</div>;
+    return (
+      <div>
+        <img src="assets/sample.jpg" />
+        This is a test
+      </div>
+    );
   }
 }
 export default AppContainer;

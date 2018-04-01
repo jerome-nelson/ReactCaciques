@@ -1,3 +1,4 @@
+import express from "express";
 import path from "path";
 import webpack from "webpack";
 import CleanWebpackPlugin from "clean-webpack-plugin";
@@ -5,7 +6,11 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 
 module.exports = {
   devServer: {
-    contentBase: "./dist"
+    contentBase: "./dist",
+    setup(app) {
+      app.use("/assets", express.static("assets"));
+    },
+    watchContentBase: true
   },
   entry: {
     app: [path.resolve(__dirname, "./src/app/index.js")],
