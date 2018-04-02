@@ -46,7 +46,9 @@
     "webpack-node-externals": "^1.6.0"
   },
   "scripts": {
-    "start": "webpack --config webpack.prod.js && node ./src/server/",
+    "start": "npm run build && npm run serve",
+    "build": "webpack --config webpack.prod.js --mode production",
+    "serve": "node ./dist/server.js",
     "develop": "webpack-dev-server --open  --config webpack.dev.js",
     "precommit": "eslint ./src/ && lint-staged",
     "prepush": "npm test",
