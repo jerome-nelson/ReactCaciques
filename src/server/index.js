@@ -11,9 +11,6 @@ const server = express();
 server.get("/", (req, res) => {
   const html = renderToString(<AppContainer />);
   const helmet = Helmet.renderStatic();
-
-  // eslint-disable-next-line
-  console.log("Test:", helmet);
   res.send(templateFn(html, helmet));
 });
 server.use("/assets", express.static("assets"));
