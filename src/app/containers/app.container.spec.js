@@ -8,6 +8,6 @@ describe("App Container", () => {
   });
   it("should render component", () => {
     const sampleComponent = shallow(<AppContainer />);
-    expect(sampleComponent.text()).toBe("<HelmetWrapper />This is a test");
+    expect(sampleComponent.text()).toBe("<SEO />This is a test");
   });
 });

@@ -1,6 +1,8 @@
-import { setMetaArray, setMetaTags } from "./seo.component";
+import React from "react";
+import SEO, { setMetaArray, setMetaTags } from "./seo.component";
+import { mount } from "enzyme";
 
-describe("SEO Component", () => {
+describe("SEO Component Methods", () => {
   describe("setMetaTags", () => {
     it("should create array", () => {
       expect(setMetaArray()).toEqual([]);
@@ -22,6 +24,15 @@ describe("SEO Component", () => {
         { name: "description", content: "Test Description" },
         { itemprop: "description", content: "Test Description" }
       ]);
+    });
+  });
+  describe("SEO Component", () => {
+    it("should contain a test title", () => {
+      expect(
+        mount(<SEO />)
+          .render()
+          .find("meta[name='title']")
+      ).toBeTruthy();
     });
   });
 });

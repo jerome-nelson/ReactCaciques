@@ -1,3 +1,6 @@
+import React from "react";
+import Helmet from "react-helmet";
+
 export const setMetaArray = meta => {
   meta = !meta ? [] : meta;
   return [].concat([], meta);
@@ -16,3 +19,32 @@ export const setMetaTags = ({ title, description }) => {
   });
   return metaObjects;
 };
+
+const mockData = {
+  title: "Test Website"
+};
+
+const mockProps = {
+  schema: "CreativeWork",
+  title: mockData.title,
+  meta: setMetaTags({
+    title: { name: "title", value: "Test Title" },
+    description: { name: "description", value: "Test Description" }
+  })
+};
+
+const SEO = () => {
+  return (
+    <Helmet
+      htmlAttributes={{
+        lang: "en",
+        itemscope: undefined,
+        itemtype: `http://schema.org/${mockProps.schema}`
+      }}
+      title={mockProps.title}
+      meta={mockProps.meta}
+    />
+  );
+};
+
+export default SEO;
