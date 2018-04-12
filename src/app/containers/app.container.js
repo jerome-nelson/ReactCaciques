@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Helmet } from "react-helmet";
+import SEO from "../components/seo.component";
 
 class AppContainer extends Component {
   constructor() {
@@ -8,9 +8,7 @@ class AppContainer extends Component {
   render() {
     return (
       <div>
-        <Helmet>
-          <title>Test Title</title>
-        </Helmet>
+        <SEO />
         <img src="assets/sample.jpg" />
         This is a test
       </div>
