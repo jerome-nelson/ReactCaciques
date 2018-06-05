@@ -5,6 +5,7 @@ export default (html, meta) => `
         ${meta.title.toString()}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <link rel="stylesheet" href="main.css" />
     </head>
     <body>
         <div id="app">${html}</div>

@@ -4,8 +4,11 @@ import router from "./router";
 const port = 3000;
 const server = express();
 
-server.get("*", router);
-server.use("/assets", express.static("assets"));
+server.use(express.static("public"));
+server.use(express.static("dist"));
+server.get("/*(.html|.htm)?/", (req, res) => {
+  router(req, res);
+});
 server.listen(port);
 
 // eslint-disable-next-line
