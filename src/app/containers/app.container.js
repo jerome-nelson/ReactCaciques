@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import SEO from "../components/seo.component";
+import { Route, Switch } from "react-router-dom";
+import routes from "../routes";
 
 class AppContainer extends Component {
   constructor() {
@@ -7,11 +8,11 @@ class AppContainer extends Component {
   }
   render() {
     return (
-      <div>
-        <SEO />
-        <img src="assets/sample.jpg" />
-        This is a test
-      </div>
+      <Switch>
+        {routes.map((route, iteration) => (
+          <Route key={`route-${iteration}`} {...route} />
+        ))}
+      </Switch>
     );
   }
 }

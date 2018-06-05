@@ -1,9 +1,9 @@
-import AppContainer from "./containers/app.container";
+import HomeComponent from "./pages/home.component";
 
 const routes = [
   {
     path: "/",
-    component: AppContainer
+    component: HomeComponent
   }
 ];
 
