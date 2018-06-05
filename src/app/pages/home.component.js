@@ -1,10 +1,10 @@
 import React from "react";
 import SEO from "../components/seo.component";
 
-const HomeComponent = () => {
+const HomeComponent = props => {
   return (
     <div>
-      <SEO /> Home
+      <SEO {...props} /> Home
     </div>
   );
 };

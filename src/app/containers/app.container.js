@@ -13,7 +13,22 @@ class AppContainer extends Component {
         <NavigationMenu links={routes} />
         <Switch>
           {routes.map((route, iteration) => {
-            return <Route key={`route-${iteration}`} exact {...route} />;
+            return (
+              <Route
+                key={`route-${iteration}`}
+                exact
+                render={props => {
+                  const { title, schema, meta } = route;
+                  const routeProps = {
+                    title,
+                    schema,
+                    meta
+                  };
+                  return <route.component {...routeProps} {...props} />;
+                }}
+                path={route.path}
+              />
+            );
           })}
         </Switch>
       </main>
