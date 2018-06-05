@@ -8,7 +8,6 @@ export default (html, meta) => `
     </head>
     <body>
         <div id="app">${html}</div>
-        <script src="/dist/client.js"></script>
     </body>
     </html>
 `;

@@ -1,12 +1,12 @@
 import React from "react";
 import SEO from "../components/seo.component";
 
-const HomeComponent = () => {
+const AboutComponent = () => {
   return (
     <div>
-      <SEO /> Home
+      <SEO /> About
     </div>
   );
 };
 
-export default HomeComponent;
+export default AboutComponent;
