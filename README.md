@@ -13,6 +13,25 @@ This is a project using React.
 * Travis CI Builds
 * Master Automated Deployment to AWS Instance
 
+## Styles
+
+[react-css-modules](https://github.com/gajus/react-css-modules) are used. Anonmyous inline styles are used.
+Import the css directly into component and use `styleName` to refer to the classes in .css
+
+Example:
+
+```
+// table.css
+.testClass {
+    background: red;
+}
+
+// table.component.js
+render() {
+    return <div styleName="testClass">This is a table</div>
+}
+```
+
 ## Travis
 
 `.travis.yml` contains a deploy hook to Elastic Beanstalk instance, (Travis build has private variables for details)

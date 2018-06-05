@@ -11,6 +11,17 @@ module.exports = merge(common, {
     app: [path.resolve(__dirname, "./src/app/index.js")],
     vendors: ["react", "react-dom"]
   },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        loaders: [
+          "style-loader",
+          "css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]"
+        ]
+      }
+    ]
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "./bundles/bundle.[name].js"
