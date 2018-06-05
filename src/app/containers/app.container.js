@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import routes from "../routes";
+import NavigationMenu from "../components/navigation.component";
 
 class AppContainer extends Component {
   constructor() {
@@ -8,11 +9,14 @@ class AppContainer extends Component {
   }
   render() {
     return (
-      <Switch>
-        {routes.map((route, iteration) => (
-          <Route key={`route-${iteration}`} {...route} />
-        ))}
-      </Switch>
+      <main>
+        <NavigationMenu links={routes} />
+        <Switch>
+          {routes.map((route, iteration) => {
+            return <Route key={`route-${iteration}`} exact {...route} />;
+          })}
+        </Switch>
+      </main>
     );
   }
 }

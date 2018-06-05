@@ -17,6 +17,7 @@ module.exports = merge(common, {
   },
   devServer: {
     contentBase: "./dist",
+    historyApiFallback: true,
     hot: true,
     setup(app) {
       app.use("/assets", express.static("assets"));
