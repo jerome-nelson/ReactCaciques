@@ -10,7 +10,12 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
+        test: /critical\.scss$/,
+        loaders: ["css-loader", "sass-loader"]
+      },
+      {
         test: /\.css$/,
+        exclude: /critical\.scss$/,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]"

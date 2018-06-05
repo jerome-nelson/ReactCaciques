@@ -8,11 +8,25 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = merge(common, {
   name: "Development Configuration",
   entry: {
-    app: [path.resolve(__dirname, "./src/app/index.js")],
+    app: path.resolve(__dirname, "./src/app/index.js"),
     vendors: ["react", "react-dom"]
   },
   module: {
     rules: [
+      {
+        test: /\.scss$/,
+        loaders: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader"
+          },
+          {
+            loader: "sass-loader"
+          }
+        ]
+      },
       {
         test: /\.css$/,
         loaders: [
