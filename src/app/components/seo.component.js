@@ -1,14 +1,11 @@
 import React from "react";
 import Helmet from "react-helmet";
-
+import PropTypes from "prop-types";
 export const setMetaArray = meta => {
   meta = !meta ? [] : meta;
   return [].concat([], meta);
 };
 
-// Used instead of store
-// TODO: Integrate Redux and store these as config
-// TODO: Type definition
 export const setMetaTags = ({ title, description }) => {
   let metaObjects = [];
   [title, description].forEach(metaObj => {
@@ -20,31 +17,22 @@ export const setMetaTags = ({ title, description }) => {
   return metaObjects;
 };
 
-const mockData = {
-  title: "Test Website"
-};
+const SEO = ({ schema, title, meta }) => (
+  <Helmet
+    htmlAttributes={{
+      lang: "en",
+      itemscope: undefined,
+      itemtype: `http://schema.org/${schema}`
+    }}
+    title={title}
+    meta={setMetaTags(meta)}
+  />
+);
 
-const mockProps = {
-  schema: "CreativeWork",
-  title: mockData.title,
-  meta: setMetaTags({
-    title: { name: "title", value: "Test Title" },
-    description: { name: "description", value: "Test Description" }
-  })
-};
-
-const SEO = () => {
-  return (
-    <Helmet
-      htmlAttributes={{
-        lang: "en",
-        itemscope: undefined,
-        itemtype: `http://schema.org/${mockProps.schema}`
-      }}
-      title={mockProps.title}
-      meta={mockProps.meta}
-    />
-  );
+SEO.propTypes = {
+  schema: PropTypes.string,
+  title: PropTypes.string,
+  meta: PropTypes.objectOf(PropTypes.object)
 };
 
 export default SEO;

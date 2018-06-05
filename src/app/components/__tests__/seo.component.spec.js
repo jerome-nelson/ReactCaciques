@@ -1,4 +1,4 @@
-import { setMetaArray, setMetaTags } from "./seo.component";
+import { setMetaArray, setMetaTags } from "../seo.component";
 
 describe("SEO Component Methods", () => {
   describe("setMetaTags", () => {
