@@ -26,7 +26,7 @@ export default function router(req, res) {
   );
 
   if (!match) {
-    res.status(404).send("Page Not Found");
+    res.status(404).send(templateFn("<h1>Page Not Found</h1>", null, null));
     return;
   }
 

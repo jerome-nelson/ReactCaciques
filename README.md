@@ -32,6 +32,10 @@ render() {
 }
 ```
 
+## Critical Styles
+
+Critical Styles are currently contained in `src/critical.scss`. This is excluded from
+
 ## Travis
 
 `.travis.yml` contains a deploy hook to Elastic Beanstalk instance, (Travis build has private variables for details)

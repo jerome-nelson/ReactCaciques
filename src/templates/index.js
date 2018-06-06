@@ -3,12 +3,10 @@ export default (html, meta, injectStyles) => {
     <!DOCTYPE html>
     <html>
     <head>
-        ${meta.title.toString()}
+        ${meta ? meta.title.toString() : ""}
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-        <style>
-        ${injectStyles}
-        </style>
+        ${injectStyles ? "<style>" + injectStyles + "</style>" : ""}
         <link rel="stylesheet" href="main.css" />
     </head>
     <body>
