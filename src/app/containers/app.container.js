@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
+import { withStyles } from "react-critical-css";
 import routes from "../routes";
+import s from "../critical.scss";
 import NavigationMenu from "../components/navigation.component";
 
 class AppContainer extends Component {
@@ -35,4 +37,5 @@ class AppContainer extends Component {
     );
   }
 }
-export default AppContainer;
+
+export default withStyles(s)(AppContainer);
