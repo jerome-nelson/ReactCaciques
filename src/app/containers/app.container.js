@@ -1,4 +1,9 @@
 import React, { Component } from "react";
+import { Route, Switch } from "react-router-dom";
+import { withStyles } from "react-critical-css";
+import routes from "../routes";
+import s from "../critical.scss";
+import NavigationMenu from "../components/navigation.component";
 
 class AppContainer extends Component {
   constructor() {
@@ -6,11 +11,31 @@ class AppContainer extends Component {
   }
   render() {
     return (
-      <div>
-        <img src="assets/sample.jpg" />
-        This is a test
-      </div>
+      <main>
+        <NavigationMenu links={routes} />
+        <Switch>
+          {routes.map((route, iteration) => {
+            return (
+              <Route
+                key={`route-${iteration}`}
+                exact
+                render={props => {
+                  const { title, schema, meta } = route;
+                  const routeProps = {
+                    title,
+                    schema,
+                    meta
+                  };
+                  return <route.component {...routeProps} {...props} />;
+                }}
+                path={route.path}
+              />
+            );
+          })}
+        </Switch>
+      </main>
     );
   }
 }
-export default AppContainer;
+
+export default withStyles(s)(AppContainer);

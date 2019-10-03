@@ -1,7 +1,9 @@
 const path = require("path");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const context = path.resolve(__dirname, "");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
+  context,
   module: {
     rules: [
       {
@@ -10,27 +12,25 @@ module.exports = {
         test: /\.js$/,
         use: [
           {
-            loader: "babel-loader"
+            loader: "babel-loader",
+            query: {
+              plugins: [
+                "transform-react-jsx",
+                [
+                  "react-css-modules",
+                  {
+                    context
+                  }
+                ]
+              ]
+            }
           },
           {
             loader: "eslint-loader"
           }
         ]
-      },
-      {
-        test: /\.(s*)css$/,
-        use: [
-          {
-            loader: "style-loader",
-            options: {
-              insertAt: "top"
-            }
-          },
-          { loader: "css-loader" },
-          { loader: "sass-loader" }
-        ]
       }
     ]
   },
-  plugins: [new CleanWebpackPlugin(path.resolve(__dirname, "dist"))]
+  plugins: [new CleanWebpackPlugin()]
 };
