@@ -17,8 +17,16 @@ module.exports = merge(common, {
         test: /\.css$/,
         exclude: /critical\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader?importLoader=1&modules&localIdentName=[path]___[name]__[local]___[hash:base64:5]"
+          { loader: MiniCssExtractPlugin.loader },
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+              modules: {
+                localIdentName: "[path]___[name]__[local]___[hash:base64:5]"
+              }
+            }
+          }
         ]
       }
     ]
