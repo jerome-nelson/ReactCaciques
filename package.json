@@ -20,6 +20,8 @@
     "sass-loader": "^8.0.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-transform-react-jsx": "^6.24.1",
@@ -57,17 +59,19 @@
     "webpack-node-externals": "^1.7.2"
   },
   "scripts": {
-    "start": "npm run build && npm run serve",
+    "start": "yarn build && yarn serve",
     "build": "webpack --config webpack.prod.js --mode production",
     "serve": "node ./dist/server.js",
     "serve:develop": "nodemon --watch src --exec npm start",
     "develop": "webpack-dev-server --open  --config webpack.dev.js",
     "precommit": "eslint ./src/ && lint-staged",
-    "prepush": "npm test",
+    "prepush": "yarn test",
     "test": "jest"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/src/setupTests.js"]
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
   },
   "lint-staged": {
     "*.{js}": [

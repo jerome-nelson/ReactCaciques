@@ -9,5 +9,12 @@
     "ecmaVersion": 7,
     "sourceType": "module"
   },
-  "plugins": ["jest"]
+  "plugins": ["jest"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect"
+    }
+  }
 }

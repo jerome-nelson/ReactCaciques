@@ -1,17 +1,14 @@
-This is a project using React.
+## React Starter Project
 
-## Assets
+A deployable react build with SSR/Develop Builds and Tests Enabled.
 
-* Webpack Dev Server: Use /assets to store any static media/files - and refer in project as relative `àssets/[rest-of-url]`
 
 ## Contains
-
-* Webpack Dev Server running Development Build of React
-* Injection of critical styles in Critical.scss
 * Eslinting with `eslint-plugin-react`
 * Prettier Autoformatting on commit
-* Travis CI Builds
-* Master Automated Deployment to AWS Instance
+
+## How to Store Assets
+* Webpack Dev Server: Use /assets to store any static media/files - and refer in project as relative `àssets/[rest-of-url]`
 
 ## Styles
 
@@ -31,10 +28,14 @@ render() {
     return <div styleName="testClass">This is a table</div>
 }
 ```
+* Injection of critical styles in Critical.scss
+
 
 ## Travis
 
 `.travis.yml` contains a deploy hook to Elastic Beanstalk instance, (Travis build has private variables for details)
+* Travis CI Builds
+* Master Automated Deployment to AWS Instance
 
 ## Husky
 
