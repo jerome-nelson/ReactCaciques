@@ -1,6 +1,6 @@
 ## React Starter Project
 
-A deployable react build with SSR/Develop Builds and Tests Enabled.
+A deployable react build with SSR/Develop Builds, Tests Enabled and Redux Store/Sagas Middleware
 
 
 ## Contains
